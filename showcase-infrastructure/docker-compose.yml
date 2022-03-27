@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+
+  db:
+    image: postgres:12
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./volumes/postgres-data:/var/lib/postgresql/data:rw
+    ports:
+      - 5432:5432
+
+  graph-db:
+    image: neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: none
+    volumes:
+      - ./volumes/neo4j-data:/data:rw
+    ports:
+      - 7474:7474
+      - 7687:7687

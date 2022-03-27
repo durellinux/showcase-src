@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+
+  feature-flag-service-spring:
+    build: .
+    image: showcase/feature-flag-service-spring
+    restart: unless-stopped
+    environment:
+      FEATURE_FLAGS_DB_URL: jdbc:postgresql://db:5432/feature-flags
+      FEATURE_FLAGS_DB_USERNAME: postgres
+      FEATURE_FLAGS_DB_PASSWORD: password
+    ports:
+      - 8081:8080
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "false"
