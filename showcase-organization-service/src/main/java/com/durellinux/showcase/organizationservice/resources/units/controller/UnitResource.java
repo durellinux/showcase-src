@@ -15,7 +15,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.UUID;
 
-@Path("/api/v1/organizations/{organizationId}/units")
+@Path("/organizationsservice/api/v1/organizations/{organizationId}/units")
 public class UnitResource {
     private final IUnitService unitService;
 

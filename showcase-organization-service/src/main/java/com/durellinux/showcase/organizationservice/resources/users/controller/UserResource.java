@@ -14,7 +14,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.UUID;
 
-@Path("/api/v1/users")
+@Path("/organizationsservice/api/v1/users")
 public class UserResource {
 
     private final IUserService userService;

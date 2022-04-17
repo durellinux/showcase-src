@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.UUID;
 
-@Path("/api/v1/organizations")
+@Path("/organizationsservice/api/v1/organizations")
 public class OrganizationResource implements IOrganizationResource {
 
     private final IOrganizationService organizationService;
