@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+
+  onboarding-frontend:
+    build: .
+    image: showcase/onboarding-frontend
+    restart: unless-stopped
+    working_dir: /src
+    volumes:
+      - .:/src
