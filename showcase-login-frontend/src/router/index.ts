@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Onboarding from "@/views/Onboarding.vue";
+import CredentialsLogin from "@/views/CredentialsLogin.vue";
 
-const entryPoint = "/onboarding";
+const entryPoint = "/login";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: entryPoint + "/start",
-    name: "Start",
-    component: Onboarding,
+    path: entryPoint + "/credentials",
+    name: "CredentialsLogin",
+    component: CredentialsLogin,
   },
 ];
 
@@ -15,6 +15,5 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
 
 export default router;

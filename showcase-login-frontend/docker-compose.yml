@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+
+  login-frontend:
+    build: .
+    image: showcase/login-frontend
+    restart: unless-stopped
+    working_dir: /src
+    volumes:
+      - .:/src
