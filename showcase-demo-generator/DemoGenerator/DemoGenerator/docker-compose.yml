@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+
+  demo-generator:
+    build: .
+    image: showcase/demo-generator
+    restart: unless-stopped
+    ports:
+      - 8083:80
+      - 8483:443
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "false"
