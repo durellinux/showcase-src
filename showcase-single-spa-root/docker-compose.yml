@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+
+  single-spa-root:
+    build: .
+    image: showcase/single-spa-root
+    restart: unless-stopped
+    working_dir: /src
+    volumes:
+      - .:/src
