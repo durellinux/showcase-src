@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+
+  vue-component-library:
+    build: .
+    image: showcase/vue-component-library
+    restart: unless-stopped
+    working_dir: /src
+    volumes:
+      - .:/src
