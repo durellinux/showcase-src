@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import { computed, defineProps } from "vue";
-import "../design_system.css";
 
 interface ButtonProps {
   label: string;
@@ -34,21 +33,44 @@ const onClick = () => {
 };
 </script>
 
-<style lang="css">
+<style lang="scss">
+@import "../design_system.scss";
+
+@mixin button-auto-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 11px 16px;
+  gap: 10px;
+}
+
+@mixin rounded-button($border-color) {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+}
+
 .btn-contained {
+  @include button-auto-layout;
+  @include typography-button;
+  @include dp2;
+  @include rounded-button(var(--color-primary));
   background-color: var(--color-primary);
   color: var(--color-text-light);
 }
 
 .btn-outlined {
+  @include button-auto-layout;
+  @include typography-button;
+  @include dp2;
+  @include rounded-button(var(--color-primary));
   background-color: var(--color-text-light);
-  border-width: 1px;
-  border-radius: 50px;
-  border-color: var(--color-primary);
   color: var(--color-primary);
 }
 
 .btn-text {
+  @include button-auto-layout;
+  @include typography-button;
+  @include rounded-button(transparent);
   background-color: transparent;
   color: var(--color-primary);
 }

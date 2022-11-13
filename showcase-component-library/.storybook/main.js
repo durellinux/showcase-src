@@ -1,4 +1,5 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   "stories": [
@@ -22,6 +23,15 @@ module.exports = {
         extensions: config.resolve.extensions,
       }),
     ];
+
+    // Make whatever fine-grained changes you need
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
+    // Return the altered config
     return config;
   },
 }

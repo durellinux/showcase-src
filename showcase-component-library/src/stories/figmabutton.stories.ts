@@ -39,12 +39,14 @@ export const Contained = figmaStory<ButtonProps>(
   "https://www.figma.com/file/GqqpunkXUd73J20rtExdHl/Design-System?node-id=6%3A212&t=7Dl1CmmNdHQKDqNG-4"
 );
 
-export const Outlined = () => ({
-  components: { DsButton },
-  template: '<ds-button label="button" variant="outlined" />',
-});
+export const Outlined = figmaStory<ButtonProps>(
+  Template,
+  { variant: "outlined", label: "outlined button" },
+  "https://www.figma.com/file/GqqpunkXUd73J20rtExdHl/Design-System?node-id=8%3A26&t=7Dl1CmmNdHQKDqNG-4"
+);
 
-export const Text = () => ({
-  components: { DsButton },
-  template: '<ds-button label="button" variant="text" />',
-});
+export const Text = figmaStory<ButtonProps>(
+  Template,
+  { variant: "text", label: "text button" },
+  "https://www.figma.com/file/GqqpunkXUd73J20rtExdHl/Design-System?node-id=8%3A22&t=7Dl1CmmNdHQKDqNG-4"
+);
