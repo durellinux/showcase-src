@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="buttonClass" @click="onClick">
+  <button type="button" :class="['btn', buttonClass]" @click="onClick">
     {{ label }}
   </button>
 </template>
@@ -47,6 +47,39 @@ const onClick = () => {
 @mixin rounded-button($border-color) {
   border: 1px solid $border-color;
   border-radius: 4px;
+}
+
+// Add ripple effect the btn class. The effect starts from the click position and expands to the button's border with a radial gradient.
+@mixin ripple-effect {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.2;
+    transition: 0s;
+  }
+}
+
+.btn {
+  @include ripple-effect;
 }
 
 .btn-contained {
