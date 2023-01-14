@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GcHeader Matches snapshot 1`] = `
+<header
+  class="header"
+>
+  <div
+    class="header__title"
+  >
+    
+    Title
+    
+  </div>
+  <div
+    class="header__actions"
+  >
+    
+    Actions
+    
+  </div>
+</header>
+`;
